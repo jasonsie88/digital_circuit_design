@@ -1,0 +1,20 @@
+module Lab2_CLG_gate(C,P,G,C0);
+output [3:0] C;
+input [3:0] P,G;
+input C0;
+wire w0,w1,w2,w3,w4,w5,w6,w7,w8,w9;
+and g1(w0,P[0],C0);
+or  g2(C[0],w0,G[0]);
+and g3(w1,P[1],G[0]);
+and g4(w2,P[1],P[0],C0);
+or  g5(C[1],w1,w2,G[1]);
+and g6(w3,P[2],G[1]);
+and g7(w4,P[2],P[1],G[0]);
+and g8(w5,P[2],P[1],P[0],C0);
+or  g9(C[2],w3,w4,w5,G[2]);
+and g10(w6,P[3],G[2]);
+and g11(w7,P[3],P[2],G[1]);
+and g12(w8,P[3],P[2],P[1],G[0]);
+and g13(w9,P[3],P[2],P[1],P[0],C0);
+or  g14(C[3],w6,w7,w8,w9,G[3]);
+endmodule
